@@ -133,4 +133,32 @@ public class PidevController {
         }
     }
 
+
+    /** Dashboarding **/
+
+    @GetMapping("/user-count")
+    @PreAuthorize("hasRole('ADMIN')")
+    public long getUserCount() {
+        return userService.getUserCount();
+    }
+
+    @GetMapping("/departement-count")
+    @PreAuthorize("hasRole('ADMIN')")
+    public long getDepartementCount() {
+        return userService.getDepartementCount();
+    }
+
+    @GetMapping("/role-statistics")
+    @PreAuthorize("hasRole('ADMIN')")
+    public Map<String, Double> getRoleStatistics() {
+        return userService.getRoleStatistics();
+    }
+
+    @GetMapping("/user-count-by-departement")
+    @PreAuthorize("hasRole('ADMIN')")
+    public Map<String, Long> getUserCountByDepartement() {
+        return userService.getUserCountByDepartement();
+    }
+
+
 }

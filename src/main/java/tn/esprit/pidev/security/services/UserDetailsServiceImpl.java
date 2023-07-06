@@ -71,6 +71,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     }*/
     public User updateUser(Long id, User user) {
         Optional<User> optionalUser = userRepository.findById(id);
+
         if (optionalUser.isPresent()) {
             User existingUser = optionalUser.get();
             existingUser.setUsername(user.getUsername());
