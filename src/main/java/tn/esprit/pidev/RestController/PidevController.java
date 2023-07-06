@@ -63,7 +63,7 @@ public class PidevController {
 
     @PostMapping("/add_dep")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Departement> createDepartement(@RequestParam("name") String name) {
+    public ResponseEntity<Departement  > createDepartement(@RequestParam("name") String name) {
         Departement createdDepartement = userService.createDepartement(name);
         return ResponseEntity.ok(createdDepartement);
     }
